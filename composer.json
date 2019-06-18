@@ -1,0 +1,61 @@
+{
+  "name": "mratwan/bankgateway",
+  "homepage": "https://github.com/mratwan/bankgateway",
+  "description": "A Laravel package for connecting to all Iraninan payment gateways",
+  "keywords": [
+    "laravel",
+    "iran",
+    "payment",
+    "gateway",
+    "port",
+    "bank",
+    "pay",
+    "mellat",
+    "saman",
+    "pasargad",
+    "parsian",
+    "sadad",
+    "meli",
+    "payline",
+    "jahanpay",
+    "zarinpal",
+    "iranian-banks",
+    "persian-banks",
+    "pardakht",
+    "dargah",
+    "shaparak",
+    "poolport",
+    "ipay",
+    "asan-pardakht",
+    "pay-ir",
+    "paypal"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mohammmadreza Atwan",
+      "email": "mratwan@gmail.com"
+    }
+  ],
+  "require": {
+    "nesbot/carbon": "~2",
+    "paypal/rest-api-sdk-php": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MrAtwan\\BankGateway\\": "src/",
+      "MrAtwan\\BankGateway\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MrAtwan\\BankGateway\\GatewayServiceProvider"
+      ],
+      "aliases": {
+        "Gateway": "MrAtwan\\BankGateway\\Gateway"
+      }
+    }
+  }
+}
