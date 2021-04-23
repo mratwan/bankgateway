@@ -1,9 +1,7 @@
 
-package's home : [shahonet.com](http://shahonet.com/اتصال-درگاه-بانک-لاراول/) 
-
 by this package we are able to connect to all Iranian bank with one unique API.
 
-( This Package is now compatible with both **4.\* and 5.\* versions of Laravel** )
+( This Package is now compatible with both **4.\*, 5.\*, 6.\* and 7.\* versions of Laravel** )
 
 Please inform us once you've encountered [bug](https://github.com/mratwan/bankgateway/issues) or [issue](https://github.com/mratwan/bankgateway/issues)  .
 
