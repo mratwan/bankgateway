@@ -1,32 +1,30 @@
 
-by this package we are able to connect to all Iranian bank with one unique API.
+این پکیج برای اتصال به درگاه بانک های ایرانی ساخته شده است.
 
-( This Package is now compatible with both **4.\*, 5.\*, 6.\* and 7.\* versions of Laravel** )
+(این پکیج با نسخه های * ۴ تا ۸ لاراول* سازگار است.)
 
-Please inform us once you've encountered [bug](https://github.com/mratwan/bankgateway/issues) or [issue](https://github.com/mratwan/bankgateway/issues)  .
-
-Available Banks:
- 1. MELLAT
- 2. SADAD (MELLI)
- 3. SAMAN
- 4. PARSIAN
- 5. PASARGAD
- 6. ZARINPAL
- 7. PAYPAL (**New**)
- 8. ASAN PARDAKHT (**New**)
- 9. PAY.IR (**New**) (to use : new \Payir())
+درگاه های قابل استفاده:
+ 1. ملت
+ 2. سداد (ملی)
+ 3. سامان
+ 4. پارسیان
+ 5. پاسارگاد
+ 6. زرین پال
+ 7. پی پال
+ 8. آسان پرداخت
+ 9. پی (pay.ir)
 ----------
 
 
 **Installation**:
 
-Run below statements on your terminal :
+دستورات زیر را در ترمینال و در پوشه پروژه خود اجرا کنید:
 
-STEP 1 : 
+مرحله اول: 
 
     composer require mratwan/bankgateway
     
-STEP 2 : Add `provider` and `facade` in config/app.php
+مرجله دوم : `provider` و `facade` را در فایل config/app.php اضافه کنید.
 
     'providers' => [
       ...
@@ -39,18 +37,18 @@ STEP 2 : Add `provider` and `facade` in config/app.php
       'Gateway' => MrAtwan\BankGateway\Gateway::class, // <-- add this line at the end of aliases array
     ]
 
-Step 3:  
+مرحله سوم:  
 
     php artisan vendor:publish --provider=MrAtwan\BankGateway\GatewayServiceProvider
 
-Step 4: 
+مرحله چهارم: 
 
     php artisan migrate
 
 
-Configuration file is placed in config/gateway.php , open it and enter your banks credential:
+تنظیمات و اطلاعات درگاه ها در فایل config/gateway.php اضافه شده اند. حال می توانید در این فایل اطلاعات درگاه های خود را وارد کنید.
 
-You can make connection to bank by several way (Facade , Service container):
+شما می توانید برای ارتباط با بانک از راه های مختلفی استفاده کنید: (Facade , Service container):
 
     try {
        
@@ -78,17 +76,17 @@ You can make connection to bank by several way (Facade , Service container):
        	echo $e->getMessage();
     }
 
-you can call the gateway by these ways :
+برای فراخوانی درگاه می توانید از روش های زیر استفاده کنید:
  1. Gateway::make(new Mellat());
- 1. Gateway::mellat()
- 2. app('gateway')->make(new Mellat());
- 3. app('gateway')->mellat();
+ 2. Gateway::mellat()
+ 3. app('gateway')->make(new Mellat());
+ 4. app('gateway')->mellat();
 
-Instead of MELLAT you can enter other banks Name as we introduced above .
+به جای MELLAT در کدهای بالا می توانید از نام درگاه های دیگر هم استفاده کنید.
 
-In `price` method you should enter the price in IRR (RIAL) 
+در متد `price` شما باید قیمت را به ریال وارد کنید. 
 
-and in your callback :
+و در متد callback به این صورت عمل نمایید:
 
     try { 
        
@@ -112,12 +110,4 @@ and in your callback :
        
         // نمایش خطای بانک
         echo $e->getMessage();
-    }  
-
-If you are intrested to developing this package you can help us by these ways :
-
- 1. Improving documents.
- 2. Reporting issue or bugs.
- 3. Collaboration in writing codes and other banks modules.
-
-This package is extended from PoolPort  but we've changed some functionality and improved it .
+    }
